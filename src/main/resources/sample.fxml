@@ -29,7 +29,7 @@
       </MenuBar>
       <SplitPane fx:id="splitPane" dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
         <items>
-          <AnchorPane maxWidth="210.0" minHeight="0.0" minWidth="210.0" prefHeight="348.0" prefWidth="215.0">
+          <AnchorPane fx:id="anchorNotChange" maxWidth="210.0" minHeight="0.0" minWidth="210.0" prefHeight="348.0" prefWidth="215.0">
                <children>
                   <Accordion AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <panes>
@@ -37,7 +37,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <VBox prefHeight="240.0" prefWidth="200.0">
+                                    <VBox fx:id="vBox" prefHeight="240.0" prefWidth="200.0">
                                        <children>
                                           <Button fx:id="btnDepartment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#departmentUnit" prefHeight="53.0" prefWidth="201.0" text="Справочник подразделений" wrapText="true">
                                              <cursor>

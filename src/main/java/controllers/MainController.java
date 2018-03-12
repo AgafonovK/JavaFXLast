@@ -20,43 +20,35 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     @FXML private MenuBar menuBar;
-
     @FXML private Menu file;
-
     @FXML private MenuItem close;
-
     @FXML private Menu edit;
     @FXML private  MenuItem delete;
-
     @FXML private Menu help;
-
     @FXML private MenuItem about;
     @FXML private SplitPane splitPane;
     @FXML private Button btnDepartment;
-
     @FXML private AnchorPane anchorToChange;
-    //@FXML private
-
-
-
-
+    @FXML private VBox vBox;
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
     @FXML
     private void departmentUnit (MouseEvent event){
+     //   System.out.println("start ");
             loadUI();
     }
 
     private void loadUI (){
+
         Parent root=null;
         try {
           root =  FXMLLoader.load(getClass().getResource("/departmentUnit.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        anchorToChange.setClip(root);
+        anchorToChange.getChildren().add(root);
 
     }
 }
