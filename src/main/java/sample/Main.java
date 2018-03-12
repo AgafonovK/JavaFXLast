@@ -14,7 +14,6 @@ public class Main extends Application {
     protected ConfigurableApplicationContext springContext;
    // protected StageManager stageManager;
 
-
     @Override
     public void start(Stage primaryStage) throws Exception{
 
