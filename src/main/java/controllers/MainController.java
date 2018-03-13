@@ -38,21 +38,40 @@ public class MainController implements Initializable {
     @FXML
     private Button btnDepartment;
     @FXML
+    private  Button btnGraph;
+    @FXML
     private AnchorPane anchorToChange;
+
 
 
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    //Clear anchorToChange
+    private void clear() throws IOException {
+        anchorToChange.getChildren().clear();
+    }
+    
     @FXML
     private void setDepartmentUnit(MouseEvent event) throws IOException {
         loadUI();
     }
 
+    @FXML
     private void loadUI() throws IOException {
+        clear();
         Parent root = null;
         root = FXMLLoader.load(getClass().getResource("/departmentUnit.fxml"));
         anchorToChange.getChildren().add(root);
+    }
+
+    @FXML
+    private  void loadGraph () throws IOException{
+        clear();
+        Parent root = null;
+        root = FXMLLoader.load(getClass().getResource("/graphics.fxml"));
+        anchorToChange.getChildren().add(root);
+
     }
 
 

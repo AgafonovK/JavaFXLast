@@ -1,0 +1,8 @@
+.progress-bar > .track  {
+    /*-fx-background-color: transparent ;*/
+    -fx-control-inner-background: transparent;
+    -fx-text-box-border: transparent;
+}
+
+.red-bar    {
+    -fx-accent: red;    }
