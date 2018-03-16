@@ -28,7 +28,7 @@ public class graphicsController implements Initializable {
     private int rectX = 0;
     private int rectY = 0;
     private int rectWidht=0;
-    private int rectHight=0;
+    private int rectHight=20;
     private int color = 0;
     public void initialize(URL location, ResourceBundle resources) {
         graphicsContext = can.getGraphicsContext2D();
@@ -50,21 +50,27 @@ public class graphicsController implements Initializable {
     @FXML
     private void set (MouseEvent event) {
      //  timer();
-        change();
-        if(color == 4){
+
+
+        if(color == 3){
             color=0;
         }
+
         color++;
-        rectWidht=rectWidht+10;
-        rectHight=10;
-        rectX=rectWidht;
+        rectWidht=+10;
+        change();
+        //rectHight=+10;
+        rectX=rectX+rectWidht;
 
     }
 
+    private void addHelp(MouseEvent e){
+
+    }
 
     //TO DO
     private void change (){
-        System.out.println("X=" +rectX + " Widh=" +rectWidht +" Heig=" +rectHight + " Color " + color);
+        //System.out.println("X=" +rectX + " Widh=" +rectWidht +" Heig=" +rectHight + " Color " + color);
         Color color1 = null;
         switch (color){
             case 0:
