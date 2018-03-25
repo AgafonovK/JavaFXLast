@@ -4,36 +4,48 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 
-public class graphicsController implements Initializable {
+public class graphicsController {
 
 
-    @FXML
-    private Canvas can;
-
-    private GraphicsContext graphicsContext;
     @FXML
     private Button btn;
 
+    @FXML
+    private CategoryAxis yyAxis;
+
+    @FXML
+    private CategoryAxis xxAxis;
+
+
+
+    @FXML
+    private void btnClicked() throws IOException{
+
+    }
+
+    /*
     private int rectX = 0;
     private int rectY = 0;
     private int rectWidht=0;
     private int rectHight=20;
-    private int color = 0;
-    public void initialize(URL location, ResourceBundle resources) {
-        graphicsContext = can.getGraphicsContext2D();
-    }
+    private int color = 0;*/
+   /* public void initialize(URL location, ResourceBundle resources) {
 
+    }*/
+/*
     private void timer (){
 
         int i=0;
@@ -94,5 +106,5 @@ public class graphicsController implements Initializable {
 
     }
 
-
+*/
 }
