@@ -1,5 +1,8 @@
 package controllers;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,12 +12,18 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
-@org.springframework.stereotype.Controller
+
 
 
 public class MainController implements Initializable {
@@ -42,13 +51,31 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane anchorToChange;
 
+    //TIME ON LABEL IN BOTTOM
+    @FXML
+    private Label timeLabel;
+    //formate the date
+    private DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+    private final Timeline timeLine = new Timeline(new KeyFrame(Duration.millis(1000),event -> {
+        final long diff = System.currentTimeMillis();
+        if (diff<0){
+            timeLabel.setText("0");
+        }
+        else {
+            timeLabel.setText(dateFormat.format(diff));
+        }
+    }));
 
 
     public void initialize(URL location, ResourceBundle resources) {
+
+        //start time on label
+        timeLine.setCycleCount(Animation.INDEFINITE);
+        timeLine.play();
     }
 
     //Clear anchorToChange
-    private void clear() throws IOException {
+    private void clear() {
         anchorToChange.getChildren().clear();
     }
     
@@ -60,7 +87,7 @@ public class MainController implements Initializable {
     @FXML
     private void loadUI() throws IOException {
         clear();
-        Parent root = null;
+        Parent root;
         root = FXMLLoader.load(getClass().getResource("/departmentUnit.fxml"));
         anchorToChange.getChildren().add(root);
     }
@@ -68,7 +95,7 @@ public class MainController implements Initializable {
     @FXML
     private  void loadGraph () throws IOException{
         clear();
-        Parent root = null;
+        Parent root;
         root = FXMLLoader.load(getClass().getResource("/graphics.fxml"));
         anchorToChange.getChildren().add(root);
 

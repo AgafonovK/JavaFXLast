@@ -26,13 +26,12 @@ public class graphicsController {
     @FXML
     private CategoryAxis yyAxis;
 
+
+
+
+
     @FXML
-    private CategoryAxis xxAxis;
-
-
-
-    @FXML
-    private void btnClicked() throws IOException{
+    private void btnClicked(){
 
     }
 
