@@ -127,7 +127,7 @@
             </AnchorPane>
          </left>
          <center>
-            <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: DARKGREY;" BorderPane.alignment="CENTER_RIGHT">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: DARKGREY;" BorderPane.alignment="CENTER_RIGHT">
                <children>
                   <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" prefHeight="78.0" prefWidth="345.0" style="-fx-background-color: GREY; -fx-border-color: BLACK;" text="Для начала работы требуется авторизация. " textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
@@ -137,6 +137,10 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </Label>
+                  <AnchorPane fx:id="anchorToChange" prefHeight="265.0" prefWidth="356.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></AnchorPane>
                </children>
             </VBox>
          </center>

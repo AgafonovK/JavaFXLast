@@ -5,13 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.springframework.context.ConfigurableApplicationContext;
 
-//@SpringBootApplication
 public class Main extends Application {
 
-    protected ConfigurableApplicationContext springContext;
-   // protected StageManager stageManager;
+
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
