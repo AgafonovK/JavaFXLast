@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SecondController">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.departmentUnitController">
    <children>
        <Separator maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="417.0" VBox.vgrow="ALWAYS">
          <padding>
@@ -20,15 +20,15 @@
                  <content>
                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="4.0" prefHeight="285.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tablePerson" layoutY="4.0" prefHeight="285.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="25.0" text="ID" />
-                            <TableColumn maxWidth="1.7976931348623157E308" prefWidth="125.0" text="Фамилия" />
-                              <TableColumn maxWidth="1.7976931348623157E308" prefWidth="75.0" text="Имя" />
-                              <TableColumn prefWidth="75.0" text="Отчество" />
-                              <TableColumn prefWidth="75.0" text="Должность" />
-                              <TableColumn prefWidth="75.0" text="Телефон" />
-                              <TableColumn maxWidth="1.7976931348623157E308" prefWidth="120.0" text="Подразделение" />
+                            <TableColumn fx:id="" prefWidth="25.0" text="ID" />
+                            <TableColumn fx:id="secondName" maxWidth="1.7976931348623157E308" prefWidth="125.0" text="Фамилия" />
+                              <TableColumn fx:id="columnfirstName" maxWidth="1.7976931348623157E308" prefWidth="75.0" text="Имя" />
+                              <TableColumn fx:id="middleName" prefWidth="75.0" text="Отчество" />
+                              <TableColumn fx:id="position" prefWidth="75.0" text="Должность" />
+                              <TableColumn fx:id="phone" prefWidth="75.0" text="Телефон" />
+                              <TableColumn fx:id="department" maxWidth="1.7976931348623157E308" prefWidth="120.0" text="Подразделение" />
                           </columns>
                         </TableView>
                      </children></AnchorPane>
