@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
@@ -45,6 +46,10 @@ public class MainController implements Initializable {
     @FXML
     private SplitPane splitPane;
     @FXML
+    private TitledPane workers;
+    @FXML
+    private TitledPane setting;
+    @FXML
     private Button btnDepartment;
     @FXML
     private  Button btnGraph;
@@ -54,6 +59,7 @@ public class MainController implements Initializable {
     //TIME ON LABEL IN BOTTOM
     @FXML
     private Label timeLabel;
+
     //formate the date
     private DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     private final Timeline timeLine = new Timeline(new KeyFrame(Duration.millis(1000),event -> {
@@ -72,8 +78,14 @@ public class MainController implements Initializable {
         //start time on label
         timeLine.setCycleCount(Animation.INDEFINITE);
         timeLine.play();
+       // delete.setDisable(true);
+        expandedMenu(true);
     }
 
+    private void expandedMenu(Boolean active){
+        workers.setDisable(active);
+        setting.setDisable(active);
+    }
     //Clear anchorToChange
     private void clear() {
         anchorToChange.getChildren().clear();

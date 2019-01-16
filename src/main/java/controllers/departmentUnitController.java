@@ -1,6 +1,6 @@
 package controllers;
 
-import Model.Persons;
+import Entity.Persons;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,7 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
-import javafx.scene.control.cell.*;
 
 public class departmentUnitController implements Initializable {
 
@@ -39,7 +38,7 @@ public class departmentUnitController implements Initializable {
     private String drv = "org.postgresql.Driver";
     private String url= "jdbc:postgresql://localhost:5432/Test5";
     private String userNameDB = "postgres";
-    private String password = "";
+    private String password = "postgres";
     private Connection connection ;
     private Statement statement ;
     private ResultSet resultSet ;

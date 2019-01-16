@@ -1,9 +1,7 @@
-package Model;
+package Entity;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-import java.util.List;
 
 public class Persons  {
 

@@ -1,0 +1,121 @@
+package dao;
+
+import Entity.Department;
+//import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
+
+public class WorkerForm {
+
+    private Long id;
+    private String positionName;
+    private String firstName;
+    private String lastName;
+    private String patronymic;
+    private Long phone;
+    private String email;
+
+//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dateAccept;
+
+//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dateFired;
+
+    private Department department;
+
+    public WorkerForm() {
+    }
+
+    public WorkerForm(Long id, String positionName, String firstName, String lastName, String patronymic, Long phone, String email, LocalDate dateAccept, LocalDate dateFired, Department department) {
+        this.id = id;
+        this.positionName = positionName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.phone = phone;
+        this.email = email;
+        this.dateAccept = dateAccept;
+        this.dateFired = dateFired;
+        this.department = department;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPositionName() {
+        return positionName;
+    }
+
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public Long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Long phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDateAccept() {
+        return dateAccept;
+    }
+
+    public void setDateAccept(LocalDate dateAccept) {
+        this.dateAccept = dateAccept;
+    }
+
+    public LocalDate getDateFired() {
+        return dateFired;
+    }
+
+    public void setDateFired(LocalDate dateFired) {
+        this.dateFired = dateFired;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+}
