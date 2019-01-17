@@ -3,25 +3,96 @@ package Entity;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Persons  {
+public class Persons {
 
-    private SimpleStringProperty firstName = new SimpleStringProperty("");
-    private SimpleStringProperty secondName = new SimpleStringProperty("");
-    private SimpleStringProperty middleName = new SimpleStringProperty("");
-    private StringProperty department;
-    private StringProperty email;
-    private StringProperty position;
-    private StringProperty phone;
+    private String firstName;// = new SimpleStringProperty("");
+    private String secondName; //= new SimpleStringProperty("");
+    private String middleName; //= new SimpleStringProperty("");
+    private String department; //= new SimpleStringProperty();
+    private String email;
+    private String position;
+    private String phone;
 
-
-    public Persons (){
-        this("");//,"","");
+    public Persons() {
     }
 
-    public Persons(String firstName){//}, String secondName, String middleName){
+    public Persons(String firstName, String secondName, String middleName, String department, String email, String position, String phone) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.middleName = middleName;
+        this.department = department;
+        this.email = email;
+        this.position = position;
+        this.phone = phone;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+}
+/*
+
+
+    public Persons(String firstName, String secondName, String middleName, String department, String email, String position, String phone){
     setFirstName(firstName);
-    //setSecondName(secondName);
-    //setMiddleName(middleName);
+    setSecondName(secondName);
+    setMiddleName(middleName);
+    setDepartment(department);
+    setEmail(email);
+    setPosition(position);
+    setPhone(phone);
     }
 
 
@@ -105,3 +176,4 @@ public class Persons  {
         this.department.set(department);
     }
 }
+*/

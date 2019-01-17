@@ -13,6 +13,12 @@
             <MenuBar fx:id="menuBar" prefHeight="25.0" BorderPane.alignment="CENTER">
               <menus>
                 <Menu fx:id="file" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="login" mnemonicParsing="false" onAction="#loginUser" text="Login User" />
+                    </items>
+                    <items>
+                        <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#logoutUser" text="Logout User" />
+                    </items>
                   <items>
                     <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
                   </items>
@@ -39,24 +45,23 @@
                            <children>
                               <Accordion prefHeight="233.0" prefWidth="249.0" VBox.vgrow="ALWAYS">
                                 <panes>
-                                  <TitledPane fx:id="setting" animated="false" prefHeight="115.0" prefWidth="232.0" text="Настроики предприятия">
+                                  <TitledPane fx:id="setting" animated="true" prefHeight="115.0" prefWidth="232.0" text="Департаменты предприятия">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
                                                 <VBox fx:id="vBox" prefHeight="240.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <children>
-                                                      <Button fx:id="btnDepartment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#setDepartmentUnit" prefHeight="50.0" prefWidth="200.0" text="Список сотрудников" wrapText="true">
+                                                      <Button fx:id="btnGetDepartment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Список департаментов" wrapText="true">
                                                          <cursor>
                                                             <Cursor fx:constant="DEFAULT" />
                                                          </cursor>
                                                       </Button>
-                                                      <Button fx:id="btnPositionId" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Справочник должностей предприятия" textAlignment="CENTER" wrapText="true">
+                                                      <Button fx:id="addDepartment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#addDepartmentUnit" prefHeight="50.0" prefWidth="200.0" text="Добавить департамент" textAlignment="CENTER" wrapText="true">
                                                          <cursor>
                                                             <Cursor fx:constant="DEFAULT" />
                                                          </cursor>
                                                       </Button>
-                                                      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Button" />
-                                                      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Button" />
+                                                      <Button fx:id="deleteDepartment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Удалить департамент" />
                                                    </children>
                                                    <padding>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -72,23 +77,65 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </padding>
                                   </TitledPane>
-                                  <TitledPane fx:id="workers" animated="false" text="Справочник сотрудников">
+                                  <TitledPane fx:id="workers" animated="true" prefHeight="115.0" prefWidth="232.0" text="Справочник сотрудников">
                                     <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                        <VBox fx:id="vBoxWorker" prefHeight="240.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="btnGetWorker" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#setDepartmentUnit" prefHeight="50.0" prefWidth="200.0" text="Список сотрудников" wrapText="true">
+                                                <cursor>
+                                                    <Cursor fx:constant="DEFAULT" />
+                                                </cursor>
+                                            </Button>
+                                                <Button fx:id="addWorker" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Добавить сотрудника" textAlignment="CENTER" wrapText="true">
+                                                <cursor>
+                                                    <Cursor fx:constant="DEFAULT" />
+                                                </cursor>
+                                            </Button>
+                                                <Button fx:id="deleteWorker" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Удалить cотрудника" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </VBox>
+                                       </children>
+                                      </AnchorPane>
                                     </content>
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </padding>
                                   </TitledPane>
-                                    <TitledPane fx:id="equipment" animated="false" text="Справочники оборудования" textAlignment="CENTER">
+                                  <TitledPane fx:id="equipment" animated="true" prefHeight="115.0" prefWidth="232.0" text="Справочники оборудования" textAlignment="CENTER">
                                       <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                              <children>
+                                                  <VBox fx:id="vBoxEquipment" prefHeight="240.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <children>
+                                                          <Button fx:id="btnGetEquipment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#setDepartmentUnit" prefHeight="50.0" prefWidth="200.0" text="Список департаментов" wrapText="true">
+                                                              <cursor>
+                                                                  <Cursor fx:constant="DEFAULT" />
+                                                              </cursor>
+                                                          </Button>
+                                                          <Button fx:id="addEquipment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Добавить департамент" textAlignment="CENTER" wrapText="true">
+                                                              <cursor>
+                                                                  <Cursor fx:constant="DEFAULT" />
+                                                              </cursor>
+                                                          </Button>
+                                                          <Button fx:id="deleteWEquipment" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Удалить департамент" />
+                                                      </children>
+                                                      <padding>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </padding>
+                                                  </VBox>
+                                              </children>
+                                          </AnchorPane>
                                       </content>
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </padding>
-                                    </TitledPane>
-                                  <TitledPane fx:id="graphics" animated="false" prefHeight="150.0" prefWidth="212.0" text="Графики">
+                                  </TitledPane>
+                                  <TitledPane fx:id="report" animated="true" prefHeight="150.0" prefWidth="212.0" text="Отчеты">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="174.0">
                                              <children>
@@ -124,7 +171,7 @@
             </AnchorPane>
          </left>
          <center>
-            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: DARKGREY;" BorderPane.alignment="CENTER_RIGHT">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: DARKGREY;" BorderPane.alignment="CENTER_RIGHT">
                <children>
                   <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" prefHeight="78.0" prefWidth="345.0" style="-fx-background-color: GREY; -fx-border-color: BLACK;" text="Для начала работы требуется авторизация. " textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
@@ -134,7 +181,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </Label>
-                  <AnchorPane fx:id="anchorToChange" prefHeight="265.0" prefWidth="356.0" VBox.vgrow="ALWAYS">
+                  <AnchorPane fx:id="anchorToChange" nodeOrientation="LEFT_TO_RIGHT" prefHeight="265.0" prefWidth="356.0" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin></AnchorPane>
